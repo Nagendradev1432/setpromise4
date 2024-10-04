@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        function signup(){
+            let pr1=new Promise((re,rej)=>{
+                setTimeout(()=>{
+                    res("promise1 is resolved")
+                },2000)
+            })
+            return pr1
+        }
+
+        function Login(){
+            let pr2=new Promise((res,rej)=>{
+                setTimeout(()=>{
+                    res("promise2 is resolved")
+                },1000)
+            })
+            return pr2
+        }
+
+        function home(){
+            let pr3=new Promise((res,rej)=>{
+                setTimeout(()=>{
+                    res("promise3 is resolved")
+                })
+            },1500)
+            return pr3;
+        }
+
+
+        signup().then((e)=>{console.log(e);return Login()
+        }).then((e)=>{console.log(e);return home()
+        }).then((e)=>{console.log(e)
+        }).catch((e)=>{console.log(e);
+        })
+      
+     </script> 
+</body>
+</html>
